@@ -26,7 +26,7 @@ public class Reflector extends Rotor {
     }
 
     @Override
-    public int convertBackward(int unused) {//Cryptage de la lettre saisie à travers le reflector en allant vers l'exterieur
+    public int convertBackward(int unused) {//Pas de backward donc surcharge
         throw new UnsupportedOperationException();
     }
 

@@ -22,7 +22,7 @@ public class Machine {
 		rightRotor.setPosition(Rotor.toIndex(charSettings[3]));
 	}
 	
-	public void configure(Reflector reflector, Rotor left, Rotor middle, Rotor right, String setting) {
+	public void configure(Reflector reflector, Rotor left, Rotor middle, Rotor right, String setting) {//Initialise la position des rotors dans notre machine
 		this.initRotors(reflector, left, middle, right);
 		this.setPositions(setting);
 
@@ -38,7 +38,7 @@ public class Machine {
 		return result;
 	}
 
-	char convertChar(char c) {
+	char convertChar(char c) { //conversion d'un caractère avec la machine
 		advanceRotors();
 		int charIndex = Rotor.toIndex(c);
 		int output;
@@ -53,7 +53,7 @@ public class Machine {
 
 	}
 
-	void advanceRotors() {
+	void advanceRotors() { //bouger les rotors si on est sur l'index d'un notch
 		boolean advanceLeft = false;
 		boolean advanceMiddle = false;
 		boolean advanceRight = true;

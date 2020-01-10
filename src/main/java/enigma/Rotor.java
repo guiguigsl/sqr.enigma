@@ -38,21 +38,21 @@ public class Rotor {
 		createBCipher();
 	}
 	
-	Rotor(int[] c, int notch1) { //Constructeur d'un objet Rotor
+	Rotor(int[] c, int notch1) { //Constructeur d'un objet Rotor avec un seul notch
 		this.notch1 = notch1;
 		cipher = c;
 		createBCipher();
 	}
 
-    public int convertForward(int p) { //Cryptage de la lettre saisie à travers le rotor en allant vers le reflector
+    public int convertForward(int p) { //Cryptage de la lettre saisie à travers un rotor en allant vers le reflector
         return ((cipher[((p+position)%26+26)%26]-position)%26+26)%26;
     }
 
-    public int convertBackward(int e) {//Cryptage de la lettre saisie à travers le rotor en allant vers l'exterieur
+    public int convertBackward(int e) {//Cryptage de la lettre saisie à travers un rotor en allant vers l'exterieur
         return ((bcipher[((e+position)%26+26)%26]-position)%26+26)%26;
     }
     
-    public void advance() { //Augmenter la valeur de notre position de 1
+    public void advance() { //Augmenter la valeur de notre position de 1 - utisier pour faire bouger le rotor dans la machine
         position = (position+1) % 26;
     }
     
