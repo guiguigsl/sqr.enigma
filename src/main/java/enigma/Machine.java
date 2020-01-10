@@ -7,14 +7,14 @@ public class Machine {
 	private Rotor rightRotor;
 	private Reflector reflector;
 
-	public void initRotors(Reflector reflector, Rotor left, Rotor middle, Rotor right) {
+	public void initRotors(Reflector reflector, Rotor left, Rotor middle, Rotor right) { //Création de la machine avec les 3 rotors et le reflector
 		this.reflector = reflector;
 		leftRotor = left;
 		middleRotor = middle;
 		rightRotor = right;
 	}
 
-	public void setPositions(String setting) {
+	public void setPositions(String setting) { //Positionner nos caractères sur les rotors
 		char[] charSettings = setting.toCharArray();
 		reflector.setPosition(Rotor.toIndex(charSettings[0]));
 		leftRotor.setPosition(Rotor.toIndex(charSettings[1]));

@@ -7,8 +7,8 @@ public class Reflector extends Rotor {
 	
 	int[] reflection;
 	
-	public static Reflector reflectorFactory(String str){
-		char[] s = str.trim().replace(" ", "").toCharArray();
+	public static Reflector reflectorFactory(String str){ //Création d'un reflector avec la meme logique que le rotor
+		char[] s = str.trim().replace(" ", "").toCharArray(); 
 		int[] cipher = new int[26];
 		for (int i = 0; i< 26; i++){
 			cipher[i] = toIndex(s[i]);
@@ -21,12 +21,12 @@ public class Reflector extends Rotor {
 		reflection = r;
 	}
         
-    public int convertForward(int p) {
+    public int convertForward(int p) {//Cryptage de la lettre saisie à travers le reflector en allant vers le reflector
         return ((reflection[((p)%26+26)%26])%26+26)%26;
     }
 
     @Override
-    public int convertBackward(int unused) {
+    public int convertBackward(int unused) {//Cryptage de la lettre saisie à travers le reflector en allant vers l'exterieur
         throw new UnsupportedOperationException();
     }
 
